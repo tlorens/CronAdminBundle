@@ -1,0 +1,6 @@
+{{ form_start(form) }}
+    {{ form_widget(form) }}
+    <br/>
+    <button class="btn btn-primary">{{ button_label|default('Save') }}</button>
+    <a class="btn btn-warning" href="{{ path('cron_admin_cron_list') }}">Cancel</a>
+{{ form_end(form) }}

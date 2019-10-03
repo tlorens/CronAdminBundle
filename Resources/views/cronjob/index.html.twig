@@ -1,0 +1,43 @@
+{% block title %}Cron Bundle Listing{% endblock %}
+{% block body %}
+<div>
+    <h2>{{- block('title') -}}</h2>
+    <div>
+        <div>
+            <table class="table">
+                <thead>
+                    <tr>
+                        <th>Cron Name</th>
+                        <th>Description</th>
+                        <th>Command</th>
+                        <th>Schedule</th>
+                        <th>Enabled</th>
+                    </tr>
+                </thead>
+                <tbody>
+                {% for job in cronjobs %}
+                    <tr>
+                        <td>{{ job.name }}</td>
+                        <td>{{ job.description }}</td>
+                        <td>{{ job.command }}</td>
+                        <td>{{ job.schedule }}</td>
+                        <td>
+                            {%- if job.enabled == true -%}
+                                Enabled
+                            {%- else -%}
+                                Disabled
+                            {%- endif -%}
+                        </td>
+                    </tr>
+                {% else %}
+                    <tr>
+                        <td colspan="5">No items found.</td>
+                    </tr>
+                {% endfor %}
+                </tbody>
+            </table>
+        </div>
+    </div>
+    <br />
+</div>
+{% endblock %}

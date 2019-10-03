@@ -1,0 +1,19 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<routes xmlns="http://symfony.com/schema/routing"
+    xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+    xsi:schemaLocation="http://symfony.com/schema/routing
+        https://symfony.com/schema/routing/routing-1.0.xsd">
+
+    <route id="cron_admin_cron_list" path="/cron_admin_index" methods="GET"
+           controller="tlorens\CronAdminBundle\Controller\CronAdminController:index"/>
+
+    <route id="cron_admin_cron_new" path="/cron_admin_new" methods="GET|POST"
+           controller="tlorens\CronAdminBundle\Controller\CronAdminController:new"/>
+
+    <route id="cron_admin_cron_edit" path="/cron_admin_edit/{id}" methods="GET|POST"
+           controller="tlorens\CronAdminBundle\Controller\CronAdminController:edit"/>
+
+    <route id="cron_admin_cron_delete" path="/cron_admin_delete/{id}" methods="DELETE"
+           controller="tlorens\CronAdminBundle\Controller\CronAdminController:delete"/>
+
+</routes>
