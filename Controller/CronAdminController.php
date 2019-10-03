@@ -2,12 +2,12 @@
 
 namespace tlorens\CronAdminBundle\Controller;
 
-use tlorens\CronAdminBundle\Form\CronJobType;
 use Cron\CronBundle\Entity\CronJob;
 use Cron\CronBundle\Cron\Manager as CronManager;
 use Symfony\Bundle\FrameworkBundle\Controller\AbstractController;
 use Symfony\Component\HttpFoundation\Request;
 use Symfony\Component\HttpFoundation\Response;
+use tlorens\CronAdminBundle\Form\CronJobType;
 
 class CronAdminController extends AbstractController
 {
@@ -21,12 +21,24 @@ class CronAdminController extends AbstractController
         $this->cronManager = $cronManager;
     }
 
+    /**
+     * Cron Job Listing
+     *
+     * @return Response
+     */
     public function index() : Response
     {
         $cronJobs = $this->cronManager->listJobs();
         return $this->render('@CronAdmin/cronjob/index.html.twig', [ 'cronjobs' => $cronJobs ]);
     }
 
+    /**
+     * Add a new Cron Job
+     *
+     * @param Request $request
+     *
+     * @return Response
+     */
     public function new(Request $request) : Response
     {
         $cronJob = new CronJob();
@@ -46,6 +58,14 @@ class CronAdminController extends AbstractController
         ]);
     }
 
+    /**
+     * Edit a Cron Job
+     *
+     * @param Request $request
+     * @param Cronjob $cronJob
+     *
+     * @return Response
+     */
     public function edit(Request $request, Cronjob $cronJob) : Response
     {
         $form = $this->createForm(CronJobType::class, $cronJob);
@@ -63,6 +83,14 @@ class CronAdminController extends AbstractController
         ]);
     }
 
+    /**
+     * Delete a Cron Job
+     *
+     * @param Request $request
+     * @param CronJob $cronJob
+     *
+     * @return Response
+     */
     public function delete(Request $request, CronJob $cronJob) : Response
     {
         if ($this->isCsrfTokenValid('delete'.$cronJob->getId(), $request->request->get('_token'))) {
