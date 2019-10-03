@@ -17,7 +17,7 @@
                 <tbody>
                 {% for job in cronjobs %}
                     <tr>
-                        <td>{{ job.name }}</td>
+                        <td><a href="{{ path('cron_admin_cron_edit', {'id': job.id}) }}">{{ job.name }}</a></td>
                         <td>{{ job.description }}</td>
                         <td>{{ job.command }}</td>
                         <td>{{ job.schedule }}</td>
