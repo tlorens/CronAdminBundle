@@ -3,7 +3,6 @@
     "description": "Package to manipulate Symfony Cron bundle",
     "type": "symfony-bundle",
     "license": "MIT",
-    "version": "0.0.1",
     "minimum-stability": "dev",
     "authors": [
         {
