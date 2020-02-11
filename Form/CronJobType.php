@@ -1,5 +1,7 @@
 <?php
 
+declare(strict_types=1);
+
 namespace tlorens\CronAdminBundle\Form;
 
 use Cron\CronBundle\Entity\CronJob;
