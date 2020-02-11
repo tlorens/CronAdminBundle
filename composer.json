@@ -11,10 +11,10 @@
         }
     ],
     "require": {
-        "php": "^7.1|^7.2",
-        "cron/cron-bundle": "^2.1",
-        "symfony/framework-bundle": "^3.4|^4.0",
-        "symfony/twig-bundle": "^3.4|^4.0"
+        "php": "^7.3|^7.4",
+        "cron/cron-bundle": "^2.2",
+        "symfony/framework-bundle": "^3.4|^4.3",
+        "symfony/twig-bundle": "^3.4|^4.3"
     },
     "autoload": {
         "psr-4": {
