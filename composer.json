@@ -1,21 +1,18 @@
 {
     "name": "tlorens/cron-admin-bundle",
-    "description": "Package to manipulate Symfony Cron bundle",
+    "description": "Package to manipulate Symfony Cron Bundle",
     "type": "symfony-bundle",
     "license": "MIT",
-    "version": "0.0.1",
     "minimum-stability": "dev",
     "authors": [
         {
-            "name": "Tim Lorens",
-            "email": "tlorens@focal-point.com"
+            "name": "Timothy Lorens",
+            "email": "tlorens@cyberdyne.org"
         }
     ],
     "require": {
-        "php": "^7.1|^7.2",
-        "cron/cron-bundle": "^2.1",
-        "symfony/framework-bundle": "^3.4|^4.0",
-        "symfony/twig-bundle": "^3.4|^4.0"
+        "php": "^7.4",
+        "cron/cron-bundle": "^2.6"
     },
     "autoload": {
         "psr-4": {
